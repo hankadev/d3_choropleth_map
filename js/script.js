@@ -50,7 +50,7 @@
             if (data) {
               educationData = data;
               const width = 1000;
-              const height = 600;
+              const height = 650;
               // create svg element and append it to body
               const svg =
                 d3.select('#canvas')
@@ -91,36 +91,48 @@
                   tooltip.style('visibility', 'hidden');
                 });
 
-              const legendRectWidht = 100;
+              // add legend
+              const legend = d3
+                .select('#legend')
+                .append('svg')
+                .attr('width', 150)
+                .attr('height', height)
 
-              const legend =
-                d3.select('#legend')
-                  .append('svg')
-                  .attr('width', width)
-                  .attr('height', 50)
-                  .append("g")
-                  .attr('transform', 'translate(' + (width - 7 * legendRectWidht) / 2 + ', 0)')
-                  .attr('id', 'legend')
-
-              legend.selectAll('rect')
-                .data(colors.reverse())
-                .enter()
-                .append('rect')
-                .attr('x', (item, index) => index * legendRectWidht)
-                .attr('y', 0)
-                .attr('width', legendRectWidht)
-                .attr('height', 20)
-                .attr('fill', c => c);
-
-              legend.selectAll('text')
-                .data(texts.reverse())
-                .enter()
-                .append('text')
-                .attr('x', (item, index) => index * legendRectWidht)
-                .attr('y', 35)
-                .attr('width', 0)
-                .attr('height', 20)
-                .text(t => t)
+              for (var i = 0; i < colors.length; i++) {
+                legend.append('rect')
+                  .attr('width', 20)
+                  .attr('height', 20)
+                  .attr('x', 0)
+                  .attr('y', 200 + i * 25)
+                  .attr('fill', colors[i]);
+                legend.append('text')
+                  .attr('x', 25)
+                  .attr('y', 215 + i * 25)
+                  .style('text-anchor', 'start')
+                  .text(texts[i]);
+              }
+              // svg.append('rect')
+              //   .attr('width', 20)
+              //   .attr('height', 20)
+              //   .attr('x', 1000)
+              //   .attr('y', 110)
+              //   .attr('fill', colors[6]);
+              // svg.append('text')
+              //   .attr('x', 1040)
+              //   .attr('y', 125)
+              //   .style('text-anchor', 'start')
+              //   .text(texts[6]);
+              // svg.append('rect')
+              //   .attr('width', 20)
+              //   .attr('height', 20)
+              //   .attr('x', 1000)
+              //   .attr('y', 135)
+              //   .attr('fill', colors[5]);
+              // svg.append('text')
+              //   .attr('x', 1040)
+              //   .attr('y', 150)
+              //   .style('text-anchor', 'start')
+              //   .text(texts[5]);
             }
           })
       }
