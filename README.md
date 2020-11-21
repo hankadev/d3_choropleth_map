@@ -2,7 +2,7 @@
 
 This is my implementation of [Free Code Camp's](https://www.freecodecamp.org/) VVisualize Data with a Choropleth Map project.
 
-[view in browser](https://hanny21.github.io/d3_choropleth_map/)
+[view in browser](https://hanny21.github.io/d3_choropleth_map/) 
 
 ## Objective
 
