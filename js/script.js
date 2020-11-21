@@ -111,28 +111,6 @@
                   .style('text-anchor', 'start')
                   .text(texts[i]);
               }
-              // svg.append('rect')
-              //   .attr('width', 20)
-              //   .attr('height', 20)
-              //   .attr('x', 1000)
-              //   .attr('y', 110)
-              //   .attr('fill', colors[6]);
-              // svg.append('text')
-              //   .attr('x', 1040)
-              //   .attr('y', 125)
-              //   .style('text-anchor', 'start')
-              //   .text(texts[6]);
-              // svg.append('rect')
-              //   .attr('width', 20)
-              //   .attr('height', 20)
-              //   .attr('x', 1000)
-              //   .attr('y', 135)
-              //   .attr('fill', colors[5]);
-              // svg.append('text')
-              //   .attr('x', 1040)
-              //   .attr('y', 150)
-              //   .style('text-anchor', 'start')
-              //   .text(texts[5]);
             }
           })
       }
